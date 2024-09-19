@@ -5,48 +5,49 @@
     @dragover.prevent
     @dragenter.prevent
   >
-    <div class="sort">
+    <div>
       <h2>Сортировка по рейтингу</h2>
-
-      <v-tooltip text="По убыванию">
-        <template v-slot:activator="{ props }">
-          <v-btn
-            v-bind="props"
-            icon="mdi-sort-ascending"
-            density="compact"
-            variant="tonal"
-            class="sort-btn"
-            color="blue"
-            @click="sortListAscending"
-          />
-        </template>
-      </v-tooltip>
-      <v-tooltip text="По возрастанию">
-        <template v-slot:activator="{ props }">
-          <v-btn
-            v-bind="props"
-            icon="mdi-sort-descending"
-            density="compact"
-            variant="tonal"
-            class="sort-btn"
-            color="blue"
-            @click="sortListDescending"
-          />
-        </template>
-      </v-tooltip>
-      <v-tooltip text="Сбросить">
-        <template v-slot:activator="{ props }">
-          <v-btn
-            v-bind="props"
-            icon="mdi-close"
-            density="compact"
-            variant="tonal"
-            class="sort-btn"
-            color="blue"
-            @click="clearSort"
-          />
-        </template>
-      </v-tooltip>
+      <div class="sort">
+        <v-tooltip text="По убыванию">
+          <template v-slot:activator="{ props }">
+            <v-btn
+              v-bind="props"
+              icon="mdi-sort-ascending"
+              density="compact"
+              variant="tonal"
+              class="sort-btn"
+              color="white"
+              @click="sortListAscending"
+            />
+          </template>
+        </v-tooltip>
+        <v-tooltip text="По возрастанию">
+          <template v-slot:activator="{ props }">
+            <v-btn
+              v-bind="props"
+              icon="mdi-sort-descending"
+              density="compact"
+              variant="tonal"
+              class="sort-btn"
+              color="white"
+              @click="sortListDescending"
+            />
+          </template>
+        </v-tooltip>
+        <v-tooltip text="Сбросить">
+          <template v-slot:activator="{ props }">
+            <v-btn
+              v-bind="props"
+              icon="mdi-close"
+              density="compact"
+              variant="tonal"
+              class="sort-btn"
+              color="white"
+              @click="clearSort"
+            />
+          </template>
+        </v-tooltip>
+      </div>
     </div>
     <div class="title">
       <h2>
@@ -200,6 +201,11 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  .sort {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 0;
+  }
   .title {
     padding-bottom: 10px;
     width: 90%;

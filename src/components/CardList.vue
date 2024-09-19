@@ -128,16 +128,43 @@ function getLocalCards() {
 getLocalCards();
 
 function sortListAscending() {
-  getLocalCards();
-  cards = cards.value.sort((a, b) => b.rating.rate - a.rating.rate);
+  switch (props.options.id) {
+    case 1:
+      firstList.value.sort((a, b) => b.rating.rate - a.rating.rate);
+      break;
+    case 2:
+      secondList.value.sort((a, b) => b.rating.rate - a.rating.rate);
+      break;
+    case 3:
+      lastList.value.sort((a, b) => b.rating.rate - a.rating.rate);
+      break;
+  }
 }
 function sortListDescending() {
-  getLocalCards();
-  cards = cards.value.sort((a, b) => a.rating.rate - b.rating.rate);
+  switch (props.options.id) {
+    case 1:
+      firstList.value.sort((a, b) => a.rating.rate - b.rating.rate);
+      break;
+    case 2:
+      secondList.value.sort((a, b) => a.rating.rate - b.rating.rate);
+      break;
+    case 3:
+      lastList.value.sort((a, b) => a.rating.rate - b.rating.rate);
+      break;
+  }
 }
 function clearSort() {
-  getLocalCards();
-  cards = cards.value.sort((a, b) => a.id - b.id);
+  switch (props.options.id) {
+    case 1:
+      firstList.value.sort((a, b) => a.id - b.id);
+      break;
+    case 2:
+      secondList.value.sort((a, b) => a.id - b.id);
+      break;
+    case 3:
+      lastList.value.sort((a, b) => a.id - b.id);
+      break;
+  }
 }
 function addCard() {
   cards.value.unshift(form.value);
